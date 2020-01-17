@@ -1,6 +1,6 @@
 import peewee
 
-database = peewee.SqliteDatabase('db.sqlite3')
+database = peewee.SqliteDatabase('db2.sqlite3')
 
 
 class Province(peewee.Model):
@@ -37,6 +37,7 @@ class TimeTable(peewee.Model):
     arrive = peewee.TimeField()
     leave = peewee.TimeField()
 
+atomic = database.atomic
 
 if __name__ == '__main__':
     database.create_tables([
